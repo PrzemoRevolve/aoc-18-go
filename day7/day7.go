@@ -56,6 +56,9 @@ func (s *step) writeSteps() (string, string) {
 
 	return ns.String(), ps.String()
 }
+func (s *step) duration() int {
+	return int(s.id-'A') + 61
+}
 
 func newStep(id byte) *step {
 	next := make([]*step, 0)
